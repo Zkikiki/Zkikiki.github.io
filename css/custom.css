@@ -1,0 +1,54 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color: #000;
+    color: #ee8fb8;
+    font-family: 'Plus Jakarta Sans', sans-serif; /* or 你自己的首选字体 */
+  }
+  h1.bigname {
+    font-family: "Nerko One", cursive;
+    font-weight: 400;
+    font-size: 6rem;
+    line-height: 1;
+    margin: 0;
+    color: #ee8fb8;
+  }
+  p.subtitle {
+    font-size: 1rem;
+    color: #b47fa5;
+    margin: 0;
+  }
+  ul.nav-list {
+    list-style: none;
+    padding: 20px;
+  }
+  ul.nav-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+  ul.nav-list li:last-child {
+    margin-bottom: 0;
+  }
+  ul.nav-list .dot {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #ee8fb8;
+    flex-shrink: 0;
+  }
+  ul.nav-list .txt {
+    margin-left: 1.5rem;
+  }
+  ul.nav-list .txt h2 {
+    font-size: 2.5rem;
+    margin: 0;
+    letter-spacing: .3rem;
+  }
+  ul.nav-list .txt p {
+    font-size: .9rem;
+    color: #b47fa5;
+    margin-top: .3rem;
+    margin-bottom: 0;
+  }
+  
