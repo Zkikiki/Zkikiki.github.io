@@ -1,0 +1,630 @@
+/* switch-style.css */
+:root {
+    --switch-red: #e60012;
+    --switch-gray: #ebebeb;
+    --switch-black: #1a1a1a;
+    --switch-pink: #ff90b6;
+    --switch-screen: #ffffff;
+    --cartridge-color: #333333;
+    --cartridge-label: #e60012;
+}
+
+body {
+    background-color: #f5eeda;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+.switch-console {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 80px auto 50px; /* 增加顶部边距从30px到50px */
+    padding-top: 20px; /* 添加顶部内边距 */
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    overflow: visible;
+}
+
+/* 卡带架区域 */
+/* 卡带架区域 - 独立于游戏机 */
+.cartridge-shelf {
+    width: 100%;
+    padding: 30px 0;
+    background-color: #f5eeda;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 20;
+}
+
+.cartridge-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.cartridge-row::-webkit-scrollbar {
+    display: none;
+}
+
+/* 卡带样式 */
+.cartridge {
+    width: 100px; /* 从80px增加到100px */
+    height: 120px; /* 从100px增加到120px */
+    background-color: var(--cartridge-color, #333333);
+    border-radius: 6px;
+    border: 3px solid #000;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Noto Sans Simplified Chinese';
+}
+
+.cartridge:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cartridge-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 25px;
+    background-color: var(--cartridge-label, #e60012);
+    color: white;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 5px;
+    z-index: 2;
+}
+
+/* 卡带图片容器 */
+.cartridge-image {
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%); /* 稍微向上偏移一点，考虑到标签的高度 */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.cartridge-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 覆盖整个区域，保持比例 */
+    border-radius: 3px;
+}
+
+/* Switch游戏机整体样式 */
+.switch-console {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    overflow: visible;
+}
+
+/* 卡带插槽 */
+.cartridge-slot {
+    position: absolute;
+    top: -10px; /* 进一步上移 */
+    left: 70%;
+    transform: translateX(-50%);
+    width: 120px; /* 从100px增加到120px */
+    height: 50px; /* 从40px增加到50px */
+    background-color: #222;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: center;
+    z-index: 5;
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* 插入的卡带 - 调整尺寸和位置 */
+.inserted-cartridge {
+    width: 100px; /* 从80px增加到100px */
+    height: 120px; /* 从100px增加到120px */
+    background-color: var(--cartridge-color, #333333);
+    border-radius: 6px;
+    border: 3px solid #000;
+    position: relative;
+    top: -150px; /* 初始位置更高 */
+    transition: top 0.5s ease;
+    opacity: 0.7;
+    display: none;
+    z-index: 1;
+}
+.inserted-cartridge.active {
+    top: -60px; /* 调整最终位置 */
+    opacity: 1;
+    display: block;
+    animation: insertCartridge 0.8s ease;
+}
+.inserted-cartridge .cartridge-label {
+    height: 20px;
+}
+
+.inserted-cartridge .cartridge-image {
+    width: 60px;
+    height: 60px;
+}
+
+
+.switch-joycon {
+    position: relative;
+    width: 150px; /* 手柄宽度 */
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+.switch-joycon.left {
+    justify-content: flex-end;
+}
+
+.switch-joycon.right {
+    justify-content: flex-start;
+}
+
+/* 手柄图片样式 */
+.joycon-img {
+    max-height: 600px;
+    width: auto;
+    object-fit: contain;
+}
+/* Switch屏幕 */
+.switch-screen {
+    background-color: var(--switch-screen, #ffffff);
+    border-radius: 10px; /* 稍微增加圆角 */
+    padding: 30px; /* 从20px增加到30px */
+    position: relative;
+    overflow: hidden;
+    min-height: 600px; /* 从500px增加到600px */
+    transition: opacity 0.3s ease;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25); /* 增强阴影效果 */
+    z-index: 10;
+    flex: 0 0 auto;
+    width: 70%; /* 从60%增加到70% */
+    max-width: 1000px; /* 从800px增加到1000px */
+}
+
+
+/* 响应式调整 */
+@media (max-width: 992px) {
+    .switch-joycon {
+        display: none; /* 小屏幕隐藏手柄 */
+    }
+    
+    .switch-screen {
+        width: 100%; /* 小屏幕时屏幕占满宽度 */
+    }
+}
+
+.switch-screen.loading {
+    opacity: 0.5;
+}
+
+/* 项目标题区域 */
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.project-title {
+    font-size: 40px;
+    font-family: 'ZCOOL KuaiLe', sans-serif;
+    color: #333;
+    margin: 0;
+    font-weight: bold;
+}
+
+.project-tag {
+    background-color: var(--switch-pink, #ff90b6);
+    font-family: 'Noto Sans Simplified Chinese', sans-serif;
+    color: white;
+    padding: 5px 20px; /* 稍微增加内边距 */
+    border-radius: 18px; /* 增加圆角 */
+    font-size: 14px; /* 从12px增加到14px */
+    font-weight: bold;
+}
+
+
+/* 项目内容区域 */
+.project-content {
+    padding: 15px 0;
+}
+
+.project-media {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-media img,
+.project-media video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.placeholder-media {
+    color: #999;
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+}
+
+.project-description {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    height: 300px;
+    overflow-y: auto;
+}
+
+/* Switch控制按钮面板 */
+.switch-controls-panel {
+    position: absolute;
+    top: 150px;
+    bottom: 20px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+}
+.switch-controls-panel.left {
+    left: 0;
+    background-color: #00a2ff; /* 蓝色左手柄 */
+    border-radius: 30px 0 0 30px;
+}
+/* 右手柄面板 */
+.switch-controls-panel.right {
+    right: 0;
+    background-color: var(--switch-pink); /* 粉色右手柄 */
+    border-radius: 0 30px 30px 0;
+}
+/* 左摇杆 */
+.left-stick {
+    width: 70px;
+    height: 70px;
+    background-color: #333;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    position: relative;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.left-stick::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+/* 动作按钮组 */
+.action-buttons {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.action-button {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.action-button.up {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.action-button.right {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.action-button.down {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.action-button.left {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+/* 响应式调整 */
+@media (max-width: 992px) {
+    .switch-controls-panel {
+        display: none;
+    }
+    
+    .switch-screen {
+        margin: 20px 0; /* 在小屏幕上移除两侧边距 */
+    }
+}
+/* Switch控制按钮 */
+.switch-controls {
+    width: 120px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.d-pad {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.d-pad-button {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.d-pad-center {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #444;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.d-pad-button.up {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.d-pad-button.right {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.d-pad-button.down {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.d-pad-button.left {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.right-stick {
+    width: 70px;
+    height: 70px;
+    background-color: #333;
+    border-radius: 50%;
+    margin-top: 30px;
+    position: relative;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.right-stick::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+/* 响应式调整 */
+@media (max-width: 992px) {
+    .switch-controls-panel {
+        display: none;
+    }
+    
+    .switch-screen {
+        margin-right: 0;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .cartridge {
+        width: 60px;
+        height: 70px;
+    }
+    
+    .cartridge-label {
+        font-size: 10px;
+        height: 16px;
+    }
+    
+    .inserted-cartridge {
+        width: 60px;
+    }
+    
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .project-tags {
+        margin-top: 10px;
+    }
+    
+    .project-title {
+        font-size: 20px;
+    }
+}
+
+/* 动画效果 */
+@keyframes insertCartridge {
+    0% {
+        top: -150px;
+    }
+    50% {
+        top: -50px; /* 稍微过冲一点 */
+    }
+    100% {
+        top: -60px; /* 最终位置 */
+    }
+}
+
+
+@keyframes screenOn {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* 卡带插入动画 */
+.cartridge.selected {
+    animation: moveToSlot 0.5s forwards;
+}
+
+@keyframes moveToSlot {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    100% {
+        transform: translateY(30px) translateX(calc(50vw - 50%));
+    }
+}
+
+/* 添加一些细节样式 */
+.switch-screen::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    background-color: #ccc;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* 添加屏幕反光效果 */
+.switch-screen::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0));
+    transform: rotate(45deg);
+    pointer-events: none;
+}
+
+/* 添加卡带插入动画 */
+@keyframes insertCartridge {
+    0% {
+        top: -80px;
+    }
+    50% {
+        top: -10px; /* 稍微过冲一点 */
+    }
+    100% {
+        top: -20px; /* 最终位置 */
+    }
+}
+
+.inserted-cartridge.active {
+    top: -20px;
+    opacity: 1;
+    display: block;
+    animation: insertCartridge 0.8s ease;
+}
+
+/* Bilibili视频容器样式 */
+.bilibili-video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9; /* 现代浏览器支持 */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* 对于不支持aspect-ratio的浏览器，使用传统方法 */
+@supports not (aspect-ratio: 16 / 9) {
+    .bilibili-video-container {
+        height: 0;
+        padding-bottom: 56.25%; /* 16:9比例 */
+    }
+}
+
+.bilibili-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
