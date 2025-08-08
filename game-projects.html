@@ -52,6 +52,14 @@
         
         <!-- Switch游戏机部分 -->
         <div class="switch-console">
+            <!-- 游戏机装饰元素 - 顶部 -->
+            <div class="switch-decorations top">
+                <img src="images/decorations/pink-dog.svg" class="" alt="">
+                <div class="pixel-dot"></div>
+                <div class="pixel-star"></div>
+                <div class="pixel-dot"></div>
+            </div>
+            
             <!-- 插入卡带的插槽 -->
             <div class="cartridge-slot">
                 <div class="inserted-cartridge">
@@ -66,9 +74,13 @@
             <div class="switch-joycon left">
                 <img src="images/left-joycon.png" alt="左手柄" class="joycon-img">
             </div>
-    
+
             <!-- Switch主机屏幕 -->
             <div class="switch-screen">
+                <!-- 屏幕角落装饰 -->
+                <div class="screen-corner-decoration top-left"></div>
+                <div class="screen-corner-decoration top-right"></div>
+                
                 <!-- 项目标题区域 -->
                 <div class="project-header">
                     <h2 class="project-title">项目名称</h2>
@@ -83,6 +95,10 @@
                 
                 <!-- 项目内容区域 -->
                 <div class="project-content">
+                    <!-- 屏幕背景装饰元素 -->
+                    <div class="screen-decoration-bubble"></div>
+                    <div class="screen-decoration-star"></div>
+                    
                     <div class="row">
                         <!-- 左侧视频/图片区域 -->
                         <div class="col-md-7">
@@ -102,23 +118,46 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- 屏幕角落装饰 -->
+                <div class="screen-corner-decoration bottom-left"></div>
+                <div class="screen-corner-decoration bottom-right"></div>
             </div>
             
             <!-- 右手柄面板 -->
             <div class="switch-joycon right">
                 <img src="images/right-joycon.png" alt="右手柄" class="joycon-img">
             </div>
+            
+            <!-- 游戏机装饰元素 - 底部 -->
+            <div class="switch-decorations bottom">
+                <div class="pixel-dot"></div>
+                <div class="pixel-star"></div>
+                <div class="pixel-dot"></div>
+                <div class="pixel-dot"></div>
+            </div>
         </div>
-    </div>
+
     
-    <!-- 项目数据 - 实际项目中可能会从后端API获取 -->
+    <!-- 项目数据 -  -->
     <script>
         const projectData = {
             project1: {
                 title: "拾布为画",
-                tags: ["非遗", "解谜", "Bootstrap 5"],
-                media: '<div class="bilibili-video-container"><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114987330703504&bvid=BV184tzzLEja&cid=31547720308&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>',
-                description: "一款健康追踪应用的UI设计和原型开发，专注于用户体验和直观的界面设计。"
+                tags: ["非遗", "解谜", "布堆画"],
+                media: '<div class="bilibili-video-container" style="border: 2px solid #FF87B1;">视频应该显示在这里<iframe src="https://player.bilibili.com/player.html?bvid=BV184tzzLEja&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>',
+
+                description: `《拾布为画》是一款以延川布堆画为灵感的寻物游戏。
+                在游戏中，玩家将扮演一名为爷爷准备生日礼物的小孩。
+                在准备礼物的过程中，玩家将通过<在不同的布堆画中寻找相同图案>这一玩法，逐步发现并理解布堆画的造型艺术。
+                最终，玩家将把所收集到的各类图案DIY拼贴组装成一幅独特的布堆画，作为生日礼物送给爷爷。
+                
+                体验目标：希望玩家能了解布堆画的特殊造型艺术，认识布堆画的图腾规律。
+                根据这个体验目标，我设计了<在不同的布堆画中寻找相同图案>的玩法。尽管玩法很简单，但这样的玩法要求玩家仔细查看每幅画，对画中的元素作出猜测和思考。
+                这样使得玩家能更深刻地了解布堆画的基础图腾和造型规律。而叙事的结合，使得玩家能在有清晰目标的同时了解布堆画的历史底蕴。
+                
+                可能这款游戏没有什么复杂、创新的内容，但正如试玩游戏的评委所说，她玩完后真的知道了这些图腾和他们的变形规律，并对布堆画等民间艺术产生了兴趣。
+                很开心这个小作品达成了它的体验目标和我们的设计初衷。`
             },
             project2: {
                 title: "移动应用设计",

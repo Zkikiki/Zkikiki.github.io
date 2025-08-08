@@ -211,6 +211,8 @@ body {
     flex: 0 0 auto;
     width: 70%; /* 从60%增加到70% */
     max-width: 1000px; /* 从800px增加到1000px */
+    position: relative;
+    overflow: hidden; /* 防止装饰元素溢出 */
 }
 
 
@@ -234,9 +236,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #eee;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #3b1f1f;
 }
 
 .project-title {
@@ -268,18 +270,26 @@ body {
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 20px;
-
-    min-height: 350px;
+    min-height: 400px; /* 增加高度 */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.project-media img,
-.project-media video {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+/* 确保项目媒体内容占满整个区域 */
+#projectMedia {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 占位符媒体样式 */
+.placeholder-media {
+    padding: 20px;
+    text-align: center;
+    color: #888;
 }
 
 .placeholder-media {
@@ -292,9 +302,10 @@ body {
 .project-description {
     background-color: #f5f5f5;
     border-radius: 10px;
-    padding: 20px;
-    height: 300px;
+    padding: 10px;
+    height: 450px;
     overflow-y: auto;
+    white-space: pre-line; /* 保留换行和空格 */
 }
 
 /* Switch控制按钮面板 */
@@ -602,24 +613,16 @@ body {
     animation: insertCartridge 0.8s ease;
 }
 
-/* Bilibili视频容器样式 */
 .bilibili-video-container {
     position: relative;
     width: 100%;
-    height: 100%;
-    aspect-ratio: 16 / 9; /* 现代浏览器支持 */
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9比例 */
     overflow: hidden;
     border-radius: 10px;
 }
 
-/* 对于不支持aspect-ratio的浏览器，使用传统方法 */
-@supports not (aspect-ratio: 16 / 9) {
-    .bilibili-video-container {
-        height: 0;
-        padding-bottom: 56.25%; /* 16:9比例 */
-    }
-}
-
+/* 确保iframe填满整个容器 */
 .bilibili-video-container iframe {
     position: absolute;
     top: 0;
@@ -628,3 +631,228 @@ body {
     height: 100%;
     border: none;
 }
+
+
+/* 游戏机装饰元素 */
+.switch-decorations {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    left: 10%;
+    z-index: 15;
+    pointer-events: none; /* 确保不会干扰交互 */
+}
+
+.switch-decorations.top {
+    top: -25px;
+}
+
+.switch-decorations.bottom {
+    bottom: -25px;
+}
+
+.custom-decoration {
+    width: 30px;
+    height: 30px;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* 屏幕角落装饰 */
+.screen-corner-decoration {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.screen-corner-decoration.top-left {
+    top: 10px;
+    left: 10px;
+}
+
+.screen-corner-decoration.top-right {
+    top: 10px;
+    right: 10px;
+}
+
+.screen-corner-decoration.bottom-left {
+    bottom: 10px;
+    left: 10px;
+}
+
+.screen-corner-decoration.bottom-right {
+    bottom: 10px;
+    right: 10px;
+}
+
+.corner-svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* 屏幕背景装饰 */
+.screen-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.bg-decoration {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+
+.bg-decoration:nth-child(1) {
+    right: 10%;
+    bottom: 15%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.bg-decoration:nth-child(2) {
+    left: 15%;
+    top: 15%;
+    animation: twinkle 5s ease-in-out infinite;
+}
+
+/* 动画效果 */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.3; transform: scale(0.9); }
+    50% { opacity: 0.8; transform: scale(1.1); }
+    100% { opacity: 0.3; transform: scale(0.9); }
+}
+
+
+.switch-decorations.top {
+    top: 20px;
+}
+
+.switch-decorations.bottom {
+    bottom: 20px;
+}
+
+.pixel-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #FF87B1;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 135, 177, 0.7);
+    animation: float 3s ease-in-out infinite;
+}
+
+.pixel-star {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 16px solid #FF87B1;
+    position: relative;
+    transform: rotate(35deg);
+    box-shadow: 0 0 10px rgba(255, 135, 177, 0.7);
+    animation: twinkle 4s ease-in-out infinite;
+}
+
+.pixel-star:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 16px solid #FF87B1;
+    transform: rotate(70deg);
+    top: -10px;
+    left: -10px;
+}
+
+.pixel-star:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 16px solid #FF87B1;
+    transform: rotate(140deg);
+    top: 0;
+    left: -10px;
+}
+
+/* 屏幕角落装饰 */
+.screen-corner-decoration {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 3px solid #FF87B1;
+    opacity: 0.6;
+    z-index: 1;
+    pointer-events: none; /* 确保不会干扰交互 */
+}
+
+.screen-corner-decoration.top-left {
+    top: 10px;
+    left: 10px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.screen-corner-decoration.top-right {
+    top: 10px;
+    right: 10px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.screen-corner-decoration.bottom-left {
+    bottom: 10px;
+    left: 10px;
+    border-right: none;
+    border-top: none;
+}
+
+.screen-corner-decoration.bottom-right {
+    bottom: 10px;
+    right: 10px;
+    border-left: none;
+    border-top: none;
+}
+
+/* 屏幕背景装饰 */
+.screen-decoration-bubble {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 135, 177, 0.2);
+    right: 10%;
+    bottom: 15%;
+    z-index: 10;
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+}
+
+.screen-decoration-star {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 135, 177, 0.1);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    left: 15%;
+    top: 15%;
+    z-index: 10;
+    pointer-events: none;
+    animation: twinkle 5s ease-in-out infinite;
+}
+
