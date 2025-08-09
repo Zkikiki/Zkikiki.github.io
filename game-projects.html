@@ -49,17 +49,22 @@
                 </div>
             </div>
         </div>
+        <!-- 背景装饰元素 -->
+        <div class="background-decorations" id="bgDecorations">
+            <!-- 装饰元素将通过JS动态生成 -->
+        </div>
         
         <!-- Switch游戏机部分 -->
         <div class="switch-console">
             <!-- 游戏机装饰元素 - 顶部 -->
             <div class="switch-decorations top">
-                <img src="images/decorations/pink-dog.svg" class="" alt="">
                 <div class="pixel-dot"></div>
-                <div class="pixel-star"></div>
+                <div class="pixel-dot"></div>
                 <div class="pixel-dot"></div>
             </div>
             
+            
+  
             <!-- 插入卡带的插槽 -->
             <div class="cartridge-slot">
                 <div class="inserted-cartridge">
@@ -83,8 +88,10 @@
                 
                 <!-- 项目标题区域 -->
                 <div class="project-header">
-                    <h2 class="project-title">项目名称</h2>
-                    
+                    <div class="project-title-container">
+                        <h2 class="project-title">项目名称</h2>
+                        <img src="images/decorations/game.svg" alt="">
+                    </div>
                     <!-- 标签区域 -->
                     <div class="project-tags">
                         <span class="project-tag">标签1</span>
@@ -97,7 +104,6 @@
                 <div class="project-content">
                     <!-- 屏幕背景装饰元素 -->
                     <div class="screen-decoration-bubble"></div>
-                    <div class="screen-decoration-star"></div>
                     
                     <div class="row">
                         <!-- 左侧视频/图片区域 -->
@@ -132,7 +138,7 @@
             <!-- 游戏机装饰元素 - 底部 -->
             <div class="switch-decorations bottom">
                 <div class="pixel-dot"></div>
-                <div class="pixel-star"></div>
+                <div class="pixel-dot"></div>
                 <div class="pixel-dot"></div>
                 <div class="pixel-dot"></div>
             </div>
@@ -144,7 +150,7 @@
         const projectData = {
             project1: {
                 title: "拾布为画",
-                tags: ["非遗", "解谜", "布堆画"],
+                tags: ["非遗", "解谜", "已完成"],
                 media: '<div class="bilibili-video-container" style="border: 2px solid #FF87B1;">视频应该显示在这里<iframe src="https://player.bilibili.com/player.html?bvid=BV184tzzLEja&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>',
 
                 description: `《拾布为画》是一款以延川布堆画为灵感的寻物游戏。
@@ -160,28 +166,53 @@
                 很开心这个小作品达成了它的体验目标和我们的设计初衷。`
             },
             project2: {
-                title: "移动应用设计",
-                tags: ["UI/UX", "Figma", "原型设计"],
+                title: "薯薯の公路之旅",
+                tags: ["AI", "桌面放置", "进行中"],
                 media: '<video controls class="img-fluid"><source src="project2.mp4" type="video/mp4"></video>',
-                description: "一款健康追踪应用的UI设计和原型开发，专注于用户体验和直观的界面设计。"
+                description: `在充满薯香的[豆豆大陆]上，生活着一群圆滚滚的可爱土豆…在这里，每个圆滚滚的土豆都有自己独特的梦想。
+                而你家这只薯，也有一个超级厉害的梦想。
+                🍔 多重の职业身份：
+                白天，它是一枚元气满满的【嘟嘟车司机】！驾驶着它的小车"突突突"地穿梭在山川湖泊中，**每趟旅程都可能收获：💰车费、🗺️奇遇、📕配方、🍯神秘食材…
+                休息时刻，它的后备箱就会"啪嗒"打开，变身迷你吧台——【街边饮料铺】开张！
+                "今日特调：『晚霞气泡饮』，喝了会变得超幸运哦~"
+                （偷偷告诉你：是从上个乘客——森林里的松鼠爷爷那里学来的秘密配方哦）
+
+                🚐 薯の终极梦想：
+                薯想攒钱买下【房车】去环 游 世 界 ！"以后我的车顶要种土豆田，车厢里有温泉浴缸。我要走遍世界的每个角落，在每个角落售卖我的薯薯奶茶！"
+
+                💪 现在招募合伙人啦：
+                工作内容：
+                ✓ 陪聊（防止小小的土豆司机开车睡着）
+                ✓ 管钱（这只总想把钱埋土里等发财的傻土豆）
+                ✓ 改造（也许你知道薯手短短够不着很多地方…）
+                ✓ 开发饮品（当然要积极推出新产品啦随机发挥你的创意吧）
+
+                ✨ 现在，请和这只有梦想的土豆一起——
+                "载客人！卖饮料！赚金币！改装车车！下一站要去哪里卖奶茶呢？海边还是山顶？”
+
+                ✧⁺⸜(●˙▾˙●)⸝⁺✧你准备好做它的最佳搭档了吗？
+
+                - 游戏特征
+                    - 通过游戏化刺激用户专注：专注产出资源，资源消耗满足成就感和新奇感。由AI驱动的资源探索带来无上限的新奇感。
+                    - 与由LLM驱动的宠物进行多元化玩法交互，建立情感联结，利用情感\责任感推动用户长久进行专注。`
             },
             project3: {
-                title: "数据可视化平台",
-                tags: ["JavaScript", "D3.js", "数据分析"],
+                title: "StickerWar",
+                tags: ["塔防", "贴纸", "已完成"],
                 media: '<img src="project3.jpg" alt="数据可视化平台" class="img-fluid">',
-                description: "使用D3.js开发的交互式数据可视化平台，能够展示复杂数据集并提供用户友好的交互。"
+                description: `使用D3.js开发的交互式数据可视化平台，能够展示复杂数据集并提供用户友好的交互。`
             },
             project4: {
                 title: "电子商务网站",
                 tags: ["React", "Node.js", "MongoDB"],
                 media: '<img src="project4.jpg" alt="电子商务网站" class="img-fluid">',
-                description: "全栈电子商务平台，包含产品展示、购物车功能、用户认证和支付集成。"
+                description: `全栈电子商务平台，包含产品展示、购物车功能、用户认证和支付集成。`
             },
             project5: {
                 title: "AI助手应用",
                 tags: ["Python", "机器学习", "API集成"],
                 media: '<video controls class="img-fluid"><source src="project5.mp4" type="video/mp4"></video>',
-                description: "基于自然语言处理的AI助手应用，可以回答问题、提供建议和执行简单任务。"
+                description: `基于自然语言处理的AI助手应用，可以回答问题、提供建议和执行简单任务。`
             }
         };
         
@@ -228,6 +259,120 @@
                         document.querySelector('.switch-screen').classList.remove('loading');
                     }, 800);
                 });
+            });
+           
+            // 装饰元素的SVG文件列表
+            const decorationImages = [
+                'images/decorations/black-star.svg',
+                'images/decorations/blue-dog.svg',
+                'images/decorations/gray-cat.svg',
+                'images/decorations/gray-dog.svg',
+                'images/decorations/gray-star.svg',
+                'images/decorations/pink-dog.svg',
+                'images/decorations/pink-star.svg',
+                'images/decorations/qiqiu.svg'
+            ];
+            
+            // 动画类型列表
+            const animationTypes = [
+                'float',
+                'twinkle',
+                'sway',
+                'bounce'
+            ];
+            
+            // 动画持续时间范围（秒）
+            const minDuration = 5;
+            const maxDuration = 12;
+            
+            // 元素大小范围（像素）
+            const minSize = 20;
+            const maxSize = 40;
+            
+            // 透明度范围
+            const minOpacity = 0.3;
+            const maxOpacity = 0.7;
+            
+            // 获取背景装饰容器
+            const container = document.getElementById('bgDecorations');
+            
+            // 计算需要多少个装饰元素来填满背景（根据屏幕大小和期望的密度）
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+            
+            // 平均每个装饰元素占据的空间（像素）
+            const spacingX = 150; // 水平间距
+            const spacingY = 150; // 垂直间距
+            
+            // 计算行数和列数
+            const columns = Math.ceil(screenWidth / spacingX);
+            const rows = Math.ceil(screenHeight / spacingY);
+            
+            // 为背景创建装饰元素网格
+            for (let row = 0; row < rows; row++) {
+                for (let col = 0; col < columns; col++) {
+                // 随机选择一个装饰元素图片
+                const randomImageIndex = Math.floor(Math.random() * decorationImages.length);
+                const imageSrc = decorationImages[randomImageIndex];
+                
+                // 创建图片元素
+                const decoration = document.createElement('img');
+                decoration.src = imageSrc;
+                decoration.className = 'bg-decoration';
+                
+                // 计算位置（添加一些随机性以避免完全规则的网格）
+                const randomOffsetX = Math.random() * (spacingX * 0.6) - (spacingX * 0.3);
+                const randomOffsetY = Math.random() * (spacingY * 0.6) - (spacingY * 0.3);
+                
+                const posX = (col * spacingX) + randomOffsetX;
+                const posY = (row * spacingY) + randomOffsetY;
+                
+                // 随机大小
+                const size = Math.floor(Math.random() * (maxSize - minSize)) + minSize;
+                
+                // 随机透明度
+                const opacity = Math.random() * (maxOpacity - minOpacity) + minOpacity;
+                
+                // 随机动画
+                const animationType = animationTypes[Math.floor(Math.random() * animationTypes.length)];
+                const animationDuration = Math.random() * (maxDuration - minDuration) + minDuration;
+                const animationDelay = Math.random() * 5; // 0-5秒的随机延迟
+                
+                // 应用样式
+                decoration.style.left = `${posX}px`;
+                decoration.style.top = `${posY}px`;
+                decoration.style.width = `${size}px`;
+                decoration.style.height = `${size}px`;
+                decoration.style.opacity = opacity;
+                decoration.style.animation = `${animationType} ${animationDuration}s ease-in-out infinite ${animationDelay}s`;
+                
+                // 添加到容器
+                container.appendChild(decoration);
+                
+                // 添加鼠标悬停事件
+                decoration.addEventListener('mouseenter', function() {
+                    const animations = ['wiggle', 'pulse', 'spin'];
+                    const randomAnim = animations[Math.floor(Math.random() * animations.length)];
+                    
+                    // 添加随机动画类
+                    this.classList.add(randomAnim);
+                    
+                    // 动画结束后移除类
+                    setTimeout(() => {
+                    this.classList.remove(randomAnim);
+                    }, 1000);
+                });
+                }
+            }
+            
+            // 窗口大小改变时重新布局（可选）
+            window.addEventListener('resize', function() {
+                // 清空现有元素
+                container.innerHTML = '';
+                
+                // 重新计算并创建装饰元素
+                // 这部分可以提取为函数，此处省略重复代码
+                // 或者简单地重新加载页面: location.reload();
             });
         });
     </script>
