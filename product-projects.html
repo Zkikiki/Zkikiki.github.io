@@ -23,7 +23,7 @@
                     <i class="bi bi-arrow-left"></i> 返回首页
                 </button>
                 <div class="sticky-note" data-project="project1">
-                    <div class="sticky-note-header">拾布为画</div>
+                    <div class="sticky-note-header">EchoClass</div>
                     <div class="sticky-note-image">
                         <img src="images/project1.jpg" alt="拾布为画">
                     </div>
@@ -154,8 +154,9 @@
             project1: {
                 title: "EchoClass",
                 tags: ["非遗", "解谜", "已完成"],
-                media: '<div class="bilibili-video-container" style="border: 2px solid #FF87B1;">视频应该显示在这里<iframe src="https://player.bilibili.com/player.html?bvid=BV184tzzLEja&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>',
-                description: ``
+                //media: '<div class="bilibili-video-container" style="border: 2px solid #FF87B1;">视频应该显示在这里<iframe src="https://player.bilibili.com/player.html?bvid=BV184tzzLEja&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>',
+                description: ``,
+                contentFile: "projectPages/echoClass.html"
             },
             project2: {
                 title: "薯薯の公路之旅",
@@ -207,7 +208,6 @@
                 }, 150);
             });
             
-            // 为每个便利贴添加点击事件
             stickyNotes.forEach(note => {
                 note.addEventListener('click', function() {
                     const projectId = this.getAttribute('data-project');
@@ -235,11 +235,18 @@
                         projectTags.appendChild(tagElement);
                     });
                     
-                    // 更新媒体内容
-                    projectMedia.innerHTML = project.media;
-                    
-                    // 更新描述
-                    projectDesc.textContent = project.description;
+                    // 加载项目内容HTML
+                    fetch(project.contentFile)
+                        .then(response => response.text())
+                        .then(html => {
+                            // 将整个项目内容区域替换为加载的HTML
+                            document.querySelector('.project-content').innerHTML = html;
+                        })
+                        .catch(error => {
+                            console.error('加载项目内容失败:', error);
+                            document.querySelector('.project-content').innerHTML = 
+                                '<div class="error-message">加载项目内容失败</div>';
+                        });
                     
                     // 添加动画效果
                     document.querySelector('.computer-screen').classList.add('loading');
@@ -248,7 +255,7 @@
                     }, 800);
                 });
             });
-            
+                    
             // 为便利贴添加随机效果
             const notes = document.querySelectorAll('.sticky-note');
             const colors = [
