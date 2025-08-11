@@ -14,37 +14,48 @@
 </head>
 <body>
     <div class="container-fluid p-0">
+        
         <!-- 顶部卡带区域 - 独立于游戏机 -->
         <div class="cartridge-shelf">
+            
             <div class="cartridge-row">
+                <button id="backButton" class="btn btn-primary back-button">
+                    <i class="bi bi-arrow-left"></i> 返回首页
+                  </button>
                 <div class="cartridge" data-project="project1">
                     <div class="cartridge-label">拾布为画</div>
                     <div class="cartridge-image">
-                        <img src="images/project1-thumb.jpg" alt="项目一缩略图">
+                        <img src="images/Buduihua-card.png" alt="项目一缩略图">
                     </div>
                 </div>
                 <div class="cartridge" data-project="project2">
-                    <div class="cartridge-label">项目二</div>
+                    <div class="cartridge-label">薯薯の公路之旅</div>
                     <div class="cartridge-image">
-                        <img src="images/project2-thumb.jpg" alt="项目二缩略图">
+                        <img src="images/shushu-card.png" alt="项目二缩略图">
                     </div>
                 </div>
                 <div class="cartridge" data-project="project3">
-                    <div class="cartridge-label">项目三</div>
+                    <div class="cartridge-label">StickerWar</div>
                     <div class="cartridge-image">
-                        <img src="images/project3-thumb.jpg" alt="项目三缩略图">
+                        <img src="images/StickerWar-card.png" alt="项目三缩略图">
                     </div>
                 </div>
                 <div class="cartridge" data-project="project4">
-                    <div class="cartridge-label">项目四</div>
+                    <div class="cartridge-label">灵魂裁缝</div>
                     <div class="cartridge-image">
-                        <img src="images/project4-thumb.jpg" alt="项目四缩略图">
+                        <img src="images/Soul-card.png" alt="项目四缩略图">
                     </div>
                 </div>
                 <div class="cartridge" data-project="project5">
-                    <div class="cartridge-label">项目五</div>
+                    <div class="cartridge-label">Greenovation</div>
                     <div class="cartridge-image">
-                        <img src="images/project5-thumb.jpg" alt="项目五缩略图">
+                        <img src="images/GG-card.png" alt="缩略图">
+                    </div>
+                </div>
+                <div class="cartridge" data-project="project6">
+                    <div class="cartridge-label">Faith or Death</div>
+                    <div class="cartridge-image">
+                        <img src="images/FOD-card.png" alt="缩略图">
                     </div>
                 </div>
             </div>
@@ -168,16 +179,16 @@
             project2: {
                 title: "薯薯の公路之旅",
                 tags: ["AI", "桌面放置", "进行中"],
-                media: '<video controls class="img-fluid"><source src="project2.mp4" type="video/mp4"></video>',
+                media: '<img src="images/shushu-card.png" alt="薯薯项目截图" class="img-fluid">',
                 description: `在充满薯香的[豆豆大陆]上，生活着一群圆滚滚的可爱土豆…在这里，每个圆滚滚的土豆都有自己独特的梦想。
                 而你家这只薯，也有一个超级厉害的梦想。
-                🍔 多重の职业身份：
+                🍔多重の职业身份：
                 白天，它是一枚元气满满的【嘟嘟车司机】！驾驶着它的小车"突突突"地穿梭在山川湖泊中，**每趟旅程都可能收获：💰车费、🗺️奇遇、📕配方、🍯神秘食材…
                 休息时刻，它的后备箱就会"啪嗒"打开，变身迷你吧台——【街边饮料铺】开张！
                 "今日特调：『晚霞气泡饮』，喝了会变得超幸运哦~"
                 （偷偷告诉你：是从上个乘客——森林里的松鼠爷爷那里学来的秘密配方哦）
 
-                🚐 薯の终极梦想：
+                🚐薯の终极梦想：
                 薯想攒钱买下【房车】去环 游 世 界 ！"以后我的车顶要种土豆田，车厢里有温泉浴缸。我要走遍世界的每个角落，在每个角落售卖我的薯薯奶茶！"
 
                 💪 现在招募合伙人啦：
@@ -187,7 +198,7 @@
                 ✓ 改造（也许你知道薯手短短够不着很多地方…）
                 ✓ 开发饮品（当然要积极推出新产品啦随机发挥你的创意吧）
 
-                ✨ 现在，请和这只有梦想的土豆一起——
+                ✨现在，请和这只有梦想的土豆一起——
                 "载客人！卖饮料！赚金币！改装车车！下一站要去哪里卖奶茶呢？海边还是山顶？”
 
                 ✧⁺⸜(●˙▾˙●)⸝⁺✧你准备好做它的最佳搭档了吗？
@@ -199,21 +210,86 @@
             project3: {
                 title: "StickerWar",
                 tags: ["塔防", "贴纸", "已完成"],
-                media: '<img src="project3.jpg" alt="数据可视化平台" class="img-fluid">',
-                description: `使用D3.js开发的交互式数据可视化平台，能够展示复杂数据集并提供用户友好的交互。`
+                media: '<div class="bilibili-video-container" style="border: 2px solid #FF87B1;">视频应该显示在这里<iframe src="https://player.bilibili.com/player.html?bvid=BV1hC4y1j7uT&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>',
+                description: `	“童话贴纸的指挥官啊，请使用胶水合理'修建'贴纸，消灭敌人，保卫贴纸本，获得最终的胜利！”
+                    
+                    类型：塔防游戏
+                	胜利条件：保卫我方城堡，击败所有敌人。
+                	游戏简介：玩家需要利用胶水购买四种类型的贴纸，将贴纸放置在合适位置以保卫城堡。
+                	贴纸：生产贴纸、攻击贴纸、防御贴纸、治疗贴纸。
+                	资源链：生产贴纸——产出——>胶水，胶水——购买——>贴纸。
+
+                    创新：
+                    ①冲破棋盘的建筑摆放：这也是我们选择贴纸的初衷。我们想突破传统棋盘式的摆放方式，贴纸可以自由地被粘贴在任何的角落————甚至可以通过堆叠引发不同的效果。
+                    我们希望玩家的策略深度有一部分在：造型各异的贴纸如何组合能达到空间最大利用率。
+                    ②改变行进路径！：我们引入了地形贴纸。地形贴纸可被放置于路上，可阻挡敌人，为路过的敌人叠加buff等。其余贴纸不可。
+                    尽管地形贴纸不能直接攻击敌人，但是它们的阻碍、增伤作用使得玩家能更好地完成发育、形成建筑流派。
+
+                	
+`
             },
             project4: {
-                title: "电子商务网站",
-                tags: ["React", "Node.js", "MongoDB"],
-                media: '<img src="project4.jpg" alt="电子商务网站" class="img-fluid">',
-                description: `全栈电子商务平台，包含产品展示、购物车功能、用户认证和支付集成。`
+                title: "灵魂裁缝",
+                tags: ["解谜", "叙事驱动"],
+                media: '<div class="pdf-container"><object data="file/Soul.pdf" type="application/pdf" width="100%" height="80%"><p>您的浏览器不支持PDF嵌入，<a href="your-pdf-file.pdf">点击下载PDF</a></p></object></div>',
+
+                description: `叙事驱动：
+                玩家在游玩的过程中能够知晓灵魂的执念、重要经历，通过叙事来推进解谜，从而了解灵魂的一生。
+                解谜：
+                谜面由来自多人的灵魂碎片以及灵魂生前的执念构成，玩家需要通过线索逐渐拼合出完整 灵魂。
+                拼图：
+                玩家需要根据叙事然后选择符合的灵魂碎片，直至拼凑出一个完整的灵魂。
+                视角：
+                以第一人称的方式展现灵魂裁缝的工作台，镜头锁定。
+                控制方法：
+                玩家利用手中的灵魂放映机镜头放置到人体各个部位，即可播放该部位的灵魂切片画面，这个画面取决于亡者自身的人生历程，通过转动右手的灵魂放映机的摇杆，即可切换该部位的灵魂碎片。按下按钮定格碎片。
+                灵魂放映机镜头、灵魂放映机的摇杆均由外部装置控制，通过传感器实现与游戏的连接。
+                技能：
+                玩家扮演一位亡者世界的灵魂裁缝，拥有【倾听灵魂意识】（线索），查询灵魂过往经历（谜题），最终缝合灵魂碎片（通关条件）的能力。
+                获胜条件：
+                拼凑出所有正确碎片，即可进入下一关。
+                场景：
+                小场景，固定场景。平面。
+                关卡时间限制：
+                无限
+                场景交互：
+                物件组合。利用灵魂放映机的镜头叠在灵魂碎片上，即可查看灵魂碎片的切片画面。成功定格所有的碎片后，碎片会组合为一个完整的灵魂。
+                解谜元素：
+                与NPC对话、场景物品交互。
+                `
             },
             project5: {
-                title: "AI助手应用",
-                tags: ["Python", "机器学习", "API集成"],
-                media: '<video controls class="img-fluid"><source src="project5.mp4" type="video/mp4"></video>',
-                description: `基于自然语言处理的AI助手应用，可以回答问题、提供建议和执行简单任务。`
-            }
+                title: "Greenovation",
+                tags: ["环保", "休闲", "策略"],
+                media: '<img src="images/GG-card.png" alt="Greenovation项目截图" class="img-fluid">',
+                description: `玩家可以在灰⾊的场景中放置净化装置，净化装置影响范围内画⾯变为彩⾊同时⻓出绿草，两个净化
+                                装置影响范围相交的地⽅会⻓出鲜花，⼀⽚⽚鲜花会连接起来形成花路。地图中存在多个污染源，当
+                                污染源被花路覆盖，污染就会被清除，区域内的所有污染源被清除后，该区域就会重新开满鲜花并完
+                                全变成彩⾊。每个关卡的⽬标是让全部区域恢复⽣机。
+`
+            },
+            project6: {
+                title: "Faith or Death",
+                tags: ["AI", "谁是卧底", "RPG"],
+                media: '<div class="bilibili-video-container" style="border: 2px solid #FF87B1;">视频应该显示在这里<iframe src="https://player.bilibili.com/player.html?bvid=BV1wu4y1E7LG&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>',
+                description: `	宗教版谁是卧底，哪方阵营能获得女神恩赐？
+                    •	玩家人数：4
+                    •	游戏类型：决策判断类RPG
+                    •	规则：
+                        o	身份设定：一轮游戏需要有四个玩家，三个玩家阵营相同，一个玩家与其他三个玩家阵营都不同，是异教徒。
+                        o	胜利规则：玩家的游戏目标是存活并获得游戏胜利。不同阵营的玩家获得胜利的条件不同。正方玩家需要发现异教徒，将其票出，票出异教徒可获得游戏胜利。异教徒在五轮投票后存活且没被发现，则游戏胜利。
+                        o	生存条件：玩家具有献祭进度，进度将随着时间降低，若低于0则玩家死亡。玩家可通过发言和触发特定事件增加进度，当异教徒进度达到100后获得胜利。
+                        o	游戏过程：
+                        	玩家必须要发言来描述自己阵营的女神像外观，该发言所有人可见。因此异教徒要谨防自己被大家发现。发言越接近女神像，可以获得更多的献祭进度。
+                        	除了发言外，玩家可以选择和NPC对话，触发特定事件成功后，可以规避自己的描述回合。还可以通过对话促使NPC转换阵营、自我献祭，从而增加玩家献祭进度。
+                        	一定游戏时长后，玩家需要进行投票，决定淘汰玩家。
+                    •	游戏实现：
+                        o	AI判断：由gpt对玩家的发言进行判断。
+                        o	AI对话：由gpt与玩家进行对话，实现自由交流。
+                    •	游戏背景：
+                    游戏的背景故事发生在有神明主宰的世界。光之女神主宰大地，夜之女神主宰天空。光之女神带来极昼，夜之女神带来极夜。这片土地上主要有三个区域：神临地、祭祀地、居民地。人们往往在居民地活动。 去往祭祀地的人将会献出生命。如果居民是光之女神的信徒，前往夜之女神的神临地将污染夜之女神的信仰。如果居民是夜之女神的信徒，前往光之女神的神临地将污染光之女神的信仰。如果居民是无信仰者，前往神临地将会获得信仰。
+`
+            },
         };
         
         // 当文档加载完成后执行
@@ -370,10 +446,27 @@
                 // 清空现有元素
                 container.innerHTML = '';
                 
-                // 重新计算并创建装饰元素
-                // 这部分可以提取为函数，此处省略重复代码
-                // 或者简单地重新加载页面: location.reload();
+                location.reload();
             });
+
+            //返回按钮
+            const backButton = document.getElementById('backButton');
+  
+            if (backButton) {
+                backButton.addEventListener('click', function() {
+                // 添加点击时的缩放动画
+                this.style.transform = 'scale(0.95)';
+                
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                    
+                    // 返回上一页
+                    window.history.back();
+                    
+                    //window.location.href = '上级页面URL';
+                }, 150);
+                });
+            }
         });
     </script>
     

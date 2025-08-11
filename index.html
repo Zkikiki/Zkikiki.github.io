@@ -11,7 +11,8 @@
         <!-- Custom Google font-->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nerko+One&family=Noto+Sans+SC:wght@100..900&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+      
         <!--<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />-->
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
@@ -19,56 +20,181 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/custom.css" rel="stylesheet" />
+        
     </head>
-    <body class="d-flex flex-column h-100">
-        <body>
-            <div class="container-fluid h-100 d-flex align-items-center">
-              <div class="row w-100">
-                <!-- 左侧菜单 -->
-                <div class="col-12 col-md-6 d-flex align-items-center">
-                  <ul class="nav-list">
-                    <li>
-                      <div class="dot"></div>
-                      <div class="txt">
-                        <a href="game-projects.html" class="nav-title-link">
-                          <h2>游&nbsp;&nbsp;戏</h2>
-                        </a>
-                        <p>AI &amp; 放置 &amp; 解谜</p>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="dot"></div>
-                      <div class="txt">
-                        <a href="products.html" class="nav-title-link">
-                          <h2>产&nbsp;&nbsp;品</h2>
-                        </a>
-                        <p>AI &amp; 用户体验</p>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="dot"></div>
-                      <div class="txt">
-                        <a href="design.html" class="nav-title-link">
-                          <h2>设&nbsp;&nbsp;计</h2>
-                        </a>
-                      </div>
-                    </li>
-                  </ul>
+    <body>
+      <!-- 装饰元素容器，绝对定位铺满整个页面 -->
+      <div class="background-decorations" id="bgDecorations">
+        <!-- 装饰元素将通过JS动态生成 -->
+      </div>
+      
+      <!-- 中央内容区域，使用固定宽度和高度 -->
+      <div class="content-container">
+        <div class="row justify-content-center">
+          <!-- 左侧菜单 -->
+          <div class="col-12 col-md-4">
+            <ul class="nav-list">
+              <li>
+                <div class="dot"></div>
+                <div class="txt">
+                  <a href="game-projects.html" class="nav-title-link">
+                    <h2>游&nbsp;&nbsp;戏</h2>
+                  </a>
+                  <p>AI &amp; 放置 &amp; 解谜</p>
                 </div>
-                
-                <!-- 右侧大标题 -->
-                <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
-                  <div class="text-center">
-                    <p class="subtitle">Portfolio</p>
-                    <h1 class="bigname">Zeng<br>Keyi</h1>
-                  </div>
+              </li>
+              <li>
+                <div class="dot"></div>
+                <div class="txt">
+                  <a href="product-projects.html" class="nav-title-link">
+                    <h2>产&nbsp;&nbsp;品</h2>
+                  </a>
+                  <p>AI &amp; 用户体验</p>
                 </div>
-              </div>
+              </li>
+              <li>
+                <div class="dot"></div>
+                <div class="txt">
+                  <a href="design.html" class="nav-title-link">
+                    <h2>设&nbsp;&nbsp;计</h2>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+    
+          <!-- 右侧大标题 -->
+          <div class="col-12 col-md-4">
+            <div class="text-center text-md-start">
+              <p class="subtitle">- Portfolio -</p>
+              <h1 class="bigname">Zeng<br>Keyi</h1>
             </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- 引入 Bootstrap JS -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    
           
-            <!-- 引入 Bootstrap JS -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-          </body>
-          
-           
+        <script>
+        document.addEventListener("DOMContentLoaded",() => {
+          // 装饰元素的SVG文件列表
+          const decorationImages = [
+                'images/decorations/black-star.svg',
+                'images/decorations/blue-dog.svg',
+                'images/decorations/gray-cat.svg',
+                'images/decorations/gray-dog.svg',
+                'images/decorations/gray-star.svg',
+                'images/decorations/pink-dog.svg',
+                'images/decorations/pink-star.svg',
+                'images/decorations/qiqiu.svg'
+            ];
+            
+            // 动画类型列表
+            const animationTypes = [
+                'float',
+                'twinkle',
+                'sway',
+                'bounce'
+            ];
+            
+            // 动画持续时间范围（秒）
+            const minDuration = 5;
+            const maxDuration = 12;
+            
+            // 元素大小范围（像素）
+            const minSize = 20;
+            const maxSize = 40;
+            
+            // 透明度范围
+            const minOpacity = 0.3;
+            const maxOpacity = 0.7;
+            
+            // 获取背景装饰容器
+            const container = document.getElementById('bgDecorations');
+            
+            // 计算需要多少个装饰元素来填满背景（根据屏幕大小和期望的密度）
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+            
+            // 平均每个装饰元素占据的空间（像素）
+            const spacingX = 150; // 水平间距
+            const spacingY = 150; // 垂直间距
+            
+            // 计算行数和列数
+            const columns = Math.ceil(screenWidth / spacingX);
+            const rows = Math.ceil(screenHeight / spacingY);
+            
+            // 为背景创建装饰元素网格
+            for (let row = 0; row < rows; row++) {
+                for (let col = 0; col < columns; col++) {
+                // 随机选择一个装饰元素图片
+                const randomImageIndex = Math.floor(Math.random() * decorationImages.length);
+                const imageSrc = decorationImages[randomImageIndex];
+                
+                // 创建图片元素
+                const decoration = document.createElement('img');
+                decoration.src = imageSrc;
+                decoration.className = 'bg-decoration';
+                
+                // 计算位置（添加一些随机性以避免完全规则的网格）
+                const randomOffsetX = Math.random() * (spacingX * 0.6) - (spacingX * 0.3);
+                const randomOffsetY = Math.random() * (spacingY * 0.6) - (spacingY * 0.3);
+                
+                const posX = (col * spacingX) + randomOffsetX;
+                const posY = (row * spacingY) + randomOffsetY;
+                
+                // 随机大小
+                const size = Math.floor(Math.random() * (maxSize - minSize)) + minSize;
+                
+                // 随机透明度
+                const opacity = Math.random() * (maxOpacity - minOpacity) + minOpacity;
+                
+                // 随机动画
+                const animationType = animationTypes[Math.floor(Math.random() * animationTypes.length)];
+                const animationDuration = Math.random() * (maxDuration - minDuration) + minDuration;
+                const animationDelay = Math.random() * 5; // 0-5秒的随机延迟
+                
+                // 应用样式
+                decoration.style.left = `${posX}px`;
+                decoration.style.top = `${posY}px`;
+                decoration.style.width = `${size}px`;
+                decoration.style.height = `${size}px`;
+                decoration.style.opacity = opacity;
+                decoration.style.animation = `${animationType} ${animationDuration}s ease-in-out infinite ${animationDelay}s`;
+                
+                // 添加到容器
+                container.appendChild(decoration);
+                
+                // 添加鼠标悬停事件
+                decoration.addEventListener('mouseenter', function() {
+                    const animations = ['wiggle', 'pulse', 'spin'];
+                    const randomAnim = animations[Math.floor(Math.random() * animations.length)];
+                    
+                    // 添加随机动画类
+                    this.classList.add(randomAnim);
+                    
+                    // 动画结束后移除类
+                    setTimeout(() => {
+                    this.classList.remove(randomAnim);
+                    }, 1000);
+                });
+                }
+            }
+            
+            // 窗口大小改变时重新布局（可选）
+            window.addEventListener('resize', function() {
+                // 清空现有元素
+                container.innerHTML = '';
+                
+                location.reload();
+            });
+
+
+
+        });
+
+        </script>   
 </html>
