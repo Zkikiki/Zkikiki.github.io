@@ -647,6 +647,47 @@ body {
     border: none;
 }
 
+/* 图片容器样式 */
+.project-img-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 确保图片正确显示 */
+.project-img-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+/* 添加图片悬停效果（可选） */
+.project-img-container:hover img {
+    transform: scale(1.02);
+}
+
+/* 整体媒体容器样式 */
+.project-media-container {
+    scrollbar-width: thin;
+    scrollbar-color: #FF87B1 #f0f0f0;
+}
+/* 自定义滚动条样式（针对Webkit浏览器） */
+.project-media-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.project-media-container::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.project-media-container::-webkit-scrollbar-thumb {
+    background-color: #FF87B1;
+    border-radius: 4px;
+}
 
 .custom-decoration {
     width: 30px;
