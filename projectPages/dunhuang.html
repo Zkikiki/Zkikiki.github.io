@@ -1,0 +1,56 @@
+<div class="row">
+    <!-- 左侧视频和图片区域 -->
+    <div class="col-md-7">
+        <div class="project-media-container" style="height: 100vh; overflow-y: auto; padding-right: 10px;">
+            <!-- 视频部分 -->
+            <div class="project-media">
+                <div class="bilibili-video-container" style="border: 2px solid #FF87B1; margin-bottom: 20px;">
+                    <iframe src="https://player.bilibili.com/player.html?bvid=BV12utSzqEr6&page=1&high_quality=1" 
+                            scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                </div>
+            </div>
+            
+            <!-- 图片部分 -->
+            <div class="project-images" style="height: 100vh; overflow-y: auto; padding-right: 10px;">
+                <!-- 图片1 -->
+                <div class="project-img-container" style="margin-bottom: 20px;">
+                    <img src="./dunhuang-framework.png" alt="交互叙事框架" style="width: 100%; border: 2px solid #FF87B1;">
+                </div>
+            </div>
+            <div class="project-images" style="height: 100vh; overflow-y: auto; padding-right: 10px;">
+                <!-- 图片2 -->
+                <div class="project-img-container" style="margin-bottom: 20px;">
+                    <img src="./dunhuang-visual-pipeline.png" alt="预处理流程" style="width: 100%; border: 2px solid #FF87B1;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 右侧项目介绍 -->
+    <div class="col-md-5">
+        <div class="project-description">
+            <p style="white-space: pre-line;">
+                理解敦煌故事壁画面临多重挑战：
+                其一，元素复杂性——壁画包含大量佛教人物与符号，既有大众熟悉的形象，也有生僻罕见的角色，并以抽象化造型和色线组合呈现，且因千年风化与修复导致细节模糊、颜色失真，使现代观众缺乏先验佛教知识时难以辨识其含义；
+                其二，结构复杂性——故事画常在同一画面中并置多个情节且无显性分隔，采用多种构图模式将不同时空压缩在静态画面中，观众需自行分辨与重组时空线索才能理解故事脉络；
+                其三，叙事复杂性——佛教故事取材于佛经，包含浓厚的宗教背景与教义概念，即便识别出角色与情节，也需跨越宗教与文化差异，才能真正领会壁画所承载的深层意义。
+
+                因此，针对非专业观众在理解壁画时普遍面临的三大挑战——元素复杂性、结构复杂性与叙事复杂性——提出多智能体驱动的互动叙事系统设计方案。
+                本研究以“自动化与个性化叙事”为核心策略，设定了三大设计目标：
+                1.<strong>元素理解目标</strong>>（Elemental Comprehension Goal）：帮助非专业用户识别并理解壁画中的关键视觉元素；
+                2.<strong>结构解析目标</strong>（Structural Interpretation Goal）：引导用户理清画面的构图布局与时空关系；
+                3.<strong>叙事理解目标</strong>（Narrative Understanding Goal）：在缺乏佛教背景知识的情况下，帮助用户跨越文化与宗教差异，理解故事的核心情节与寓意。
+
+                系统设计遵循三项原则：
+                1.叙事支架（Narrative Scaffolding）：利用互动叙事框架分阶段引导用户逐步建立对壁画的理解；
+                2.视觉锚定（Cognitive Anchoring via Visual Cues）：通过视觉提示和标记，帮助用户在整体画面中定位与理解结构要点；
+                3.反思性重构（Reflective Reframing）：鼓励用户在跨时空的思想转换中反思故事的意义与价值观。
+
+                本研究构建了一个基于多智能体系统的敦煌壁画线上展览平台，通过互动叙事有效降低公众在元素、结构、叙事三维度的理解难度，提升参观者在虚拟展览中的知识获取与文化体验质量。
+
+                除此之外，我们为互动叙事系统设计了一套处理流程，将视觉艺术与其丰富的叙事和文化背景进行语义关联（如图所示）。该流程分为分割与整合两个阶段：
+                在分割阶段，我们利用来自网络和数字化书籍的壁画图像及相关文本，在字符粒度上进行处理。视觉部分采用经过 MMDetection 框架微调的 Grounding DINO 模型，对壁画中的每个角色进行识别与定位；文本部分由基于 GPT-4o 的大语言模型代理将非结构化的描述解析为针对每个角色的结构化信息。
+                在整合阶段，基于 GPT-4 的视觉-语言代理将角色的视觉与文本特征融合，生成每个角色的“语义锚定属性”，作为构建互动叙事的基础。</p>           
+        </div>
+    </div>
+</div>
