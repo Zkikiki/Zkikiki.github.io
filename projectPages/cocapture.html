@@ -1,0 +1,41 @@
+<div class="row">
+    <!-- 左侧视频和图片区域 -->
+    <div class="col-md-7">
+        <div class="project-media-container" style="height: 100vh; overflow-y: auto; padding-right: 10px;">
+            <!-- 视频部分 -->
+            <div class="project-media">
+                <div class="bilibili-video-container" style="border: 2px solid #FF87B1; margin-bottom: 20px;">
+                    <iframe src="https://player.bilibili.com/player.html?bvid=BV1dXtUzEE8i&page=1&high_quality=1" 
+                            scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                </div>
+            </div>
+            
+            <!-- 图片部分 -->
+            
+        </div>
+    </div>
+
+    <!-- 右侧项目介绍 -->
+    <div class="col-md-5">
+        <div class="project-description">
+            <p style="white-space: pre-line;">
+                CoCapture: 无需旁人的群组照片应用总结
+                <h2>用户痛点</h2>
+                拍摄完美群体照片困难：前置摄像头难以容纳所有人且对齐背景困难
+                传统解决方案局限性：依赖他人帮助或携带三脚架/自拍杆不够便捷
+                现有技术重点改善个人自拍，群体照片解决方案不足
+                <h2>做了什么</h2>
+                开发CoCapture应用，一款无需外部帮助或额外设备的群体照片拍摄工具，适用于旅行和社交活动场景
+                <h3>技术实现：</h3>
+                基于Unity3D和OpenCV进行跨平台开发，使用背景减除和阈值处理技术区分前景背景，自动生成前景蒙版并完成图像合成
+                <h2>用户流程</h2>
+                拍摄流程：
+                第一步：一人拍摄背景图像
+                第二步：同一人拍摄第一组群体照
+                第三步：另一人拍摄第二组群体照（含第一位拍摄者）
+                最终，应用自动合成包含所有成员的完整群体照片。
+                为了保证用户体验：我们提供引导文本和半透明覆盖层助用户对齐图像，并内置编辑工具支持微调最终合成照片。
+                CoCapture通过团队协作方式创新解决了群体照片拍摄难题。   </p>           
+        </div>
+    </div>
+</div>

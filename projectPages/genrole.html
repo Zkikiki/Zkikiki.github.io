@@ -1,0 +1,43 @@
+<div class="row">
+    <!-- 左侧视频和图片区域 -->
+    <div class="col-md-7">
+        <div class="project-media-container" style="height: 100vh; overflow-y: auto; padding-right: 10px;">
+            <!-- 视频部分 -->
+            <!-- <div class="project-media">
+                <div class="bilibili-video-container" style="border: 2px solid #FF87B1; margin-bottom: 20px;">
+                    <iframe src="https://player.bilibili.com/player.html?bvid=BV12utSzqEr6&page=1&high_quality=1" 
+                            scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                </div>
+            </div> -->
+            
+            <!-- 图片部分 -->
+            <div class="project-images" style="height: 100vh; overflow-y: auto; padding-right: 10px;">
+                <!-- 图片1 -->
+                <div class="project-img-container" style="margin-bottom: 20px;">
+                    <img src="./genrole-page.jpg" alt="网页内容" style="width: 100%; border: 2px solid #FF87B1;">
+                </div>
+            </div>
+            <div class="project-images" style="height: 100vh; overflow-y: auto; padding-right: 10px;">
+                <!-- 图片2 -->
+                <div class="project-img-container" style="margin-bottom: 20px;">
+                    <img src="./genrole-pipeline.jpg" alt="流程" style="width: 100%; border: 2px solid #FF87B1;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 右侧项目介绍 -->
+    <div class="col-md-5">
+        <div class="project-description">
+            <p style="white-space: pre-line;">
+                GenRole 是一个融合渐进式角色扮演的原型系统，旨在帮助教师为自闭症儿童创建个性化的社交训练模块。系统支持定制多种内容，包括社交技能训练目标、视觉元素（儿童与教师角色、背景场景、奖励物品）、角色扮演脚本以及探索模式脚本，以满足不同儿童的个性化需求，从而提升他们的社交能力。
+                在提示词设计上，GenRole 采用 C.O.S.T.A.R. 框架（情境、目标、风格、语气、受众、输出格式），结合 chain-of-thought 生成逻辑递进的多场景叙事，并利用 one-shot 在最少输入的情况下生成相关内容；同时，系统保留教师人工编辑窗口，确保生成结果的可控性与安全性。
+                视觉内容由 DALL·E 3 按固定分辨率生成，角色与奖励物品在生成后会去除背景并存储到数据库，方便重复使用；用户也可上传图片并通过 Remove.bg 自动去背景。
+
+<strong>用户流程</strong>：
+个性化阶段：用户先进入引导页并输入 ID → 查看或管理学生档案与历史记录 → 为新学生选择社交技能目标 → 输入生成描述 → 系统生成视觉元素 → 生成角色扮演脚本与探索模式脚本。
+角色扮演阶段：用户可选择不同的互动模式（包括新引入的“角色模式”）→ 在对话页进行教师与儿童的互动演练 → 在提示页获得指导策略 → 每个场景结束后进入奖励页，展示奖励物品并给予鼓励。
+这样，GenRole 既提供了自动化的多模态生成能力，又确保了教师在内容定制中的主导权，实现了高效、可控且富有沉浸感的个性化社交技能训练。。</p>           
+        </div>
+    </div>
+</div>
