@@ -14,13 +14,13 @@
             <div class="project-images" style="height: 100vh; overflow-y: auto; padding-right: 10px;">
                 <!-- 图片1 -->
                 <div class="project-img-container" style="margin-bottom: 20px;">
-                    <img src="./genrole-page.jpg" alt="网页内容" style="width: 100%; border: 2px solid #FF87B1;">
+                    <img src="/projectPages/genrole-page.jpg" alt="网页内容" style="width: 100%; border: 2px solid #FF87B1;">
                 </div>
             </div>
             <div class="project-images" style="height: 100vh; overflow-y: auto; padding-right: 10px;">
                 <!-- 图片2 -->
                 <div class="project-img-container" style="margin-bottom: 20px;">
-                    <img src="./genrole-pipeline.jpg" alt="流程" style="width: 100%; border: 2px solid #FF87B1;">
+                    <img src="/projectPages/genrole-pipeline.jpg" alt="流程" style="width: 100%; border: 2px solid #FF87B1;">
                 </div>
             </div>
         </div>
@@ -30,6 +30,10 @@
     <div class="col-md-5">
         <div class="project-description">
             <p style="white-space: pre-line;">
+                <h1>为什么做（需求与问题）</h1>
+                研究证明，角色扮演有助于提高自闭症儿童的社交能力。然而，由于自闭症儿童不仅在偏好和读写能力上存在显著差异，并且往往难以代入陌生角色，这导致教师或家长需要针对儿童的特色进行角色扮演故事、道具的改造。与此同时，儿童即使学会了某个故事，也难以将知识迁移到真实的生活场景中。
+                因此，教师或家长们需要找到合适的角色扮演场景、叙事、角色，但市面上往往只有预设好的角色扮演道具，这让教师和家长十分苦恼。
+                <h1>项目内容</h1>
                 GenRole 是一个融合渐进式角色扮演的原型系统，旨在帮助教师为自闭症儿童创建个性化的社交训练模块。系统支持定制多种内容，包括社交技能训练目标、视觉元素（儿童与教师角色、背景场景、奖励物品）、角色扮演脚本以及探索模式脚本，以满足不同儿童的个性化需求，从而提升他们的社交能力。
                 在提示词设计上，GenRole 采用 C.O.S.T.A.R. 框架（情境、目标、风格、语气、受众、输出格式），结合 chain-of-thought 生成逻辑递进的多场景叙事，并利用 one-shot 在最少输入的情况下生成相关内容；同时，系统保留教师人工编辑窗口，确保生成结果的可控性与安全性。
                 视觉内容由 DALL·E 3 按固定分辨率生成，角色与奖励物品在生成后会去除背景并存储到数据库，方便重复使用；用户也可上传图片并通过 Remove.bg 自动去背景。
